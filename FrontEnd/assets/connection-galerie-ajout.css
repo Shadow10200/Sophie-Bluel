@@ -1,0 +1,190 @@
+/***Modification index***/
+footer {
+	background-color: white;
+	padding: 2px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+.texte-gras	{
+	font-weight: 800;
+	color: black;
+}		
+.filtres {
+	display: flex;
+	justify-content:center;
+	padding-bottom: 3em;
+}
+.encadrements-filtres {
+	border: 1px solid #1D6154 ;
+	border-radius: 60px;
+	color: #1D6154;
+	font-size: 17px;
+	font-weight: 600;
+	width: auto;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 7px;
+	padding: 3px 13px;
+	&:active {
+		background-color: #1D6154;
+		color: #FFFEF8;
+	}
+}
+
+/***Css pour Login***/
+
+.centrer {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1em;
+} 
+.connection{
+	display: flex;
+	align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;	
+}
+.input {
+	width: 379px;
+    height: 51px;
+	border: 1px;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+.input2 {
+	width: 420px;
+}
+.label {
+	font-weight: 600;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+
+.se-connecter {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+.motsdepasse {
+	text-decoration: underline;
+}
+
+/***Galerie et Ajout photo***/
+
+.police-Work {
+	font-family: 'Work Sans', sans-serif;
+}	
+
+.valider {
+	background-color: #A7A7A7;
+	color: #FFFFFF;
+	border-radius: 60px;
+	width: 237px;
+	height: 36px;
+	margin-top: 3em;
+	font-size: 14px;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	font-family: 'Syne';	
+}
+
+.valider:active {
+		transform: scale(1);
+	    opacity: 0.8;
+	}
+
+.ligne-de-séparation {
+	border-top: 1px solid #B3B3B3;
+    width: 60%;
+	margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;	
+}	
+
+.cadre-photo{
+	width: 420px;
+    height: 169px;
+	border-radius: 3px;
+	background-color:#E8F1F6;
+	margin: auto;
+	margin-top: 3em;
+	
+}
+
+.icone-photo {
+	color: #B9C5CC;
+    font-size: 70px;
+    padding-top: 20px;
+
+}
+.ajouter-photo {
+	width: 173px;
+    height:  36px;
+    border-radius: 50px;
+	background-color: #CBD6DC;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	margin-top: 10px;
+    font-size: 14px;
+	color: #306685;
+}
+
+.mo-max {
+	font-size: 10px;
+	font-weight: 400;
+
+}
+
+.petite-fenètre {
+	width: 630px;
+	height: 670px;
+	border-radius: 10px;
+
+}
+
+.fermer {
+	margin-top: 2em;
+	margin-right: 2em;
+}
+
+.précédent {
+	margin-top: 2em;
+	margin-left: 2em;
+	width: 21px;
+}
+
+.écart {
+	display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+	font-size: 20px;
+}
+.écart2 {
+	display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+
+.ajouter {
+	font-family: 'Syne';
+	background-color: #1D6154;
+	color: #FFFFFF;
+	border-radius: 60px;
+	width: 237px;
+	height: 36px;
+	margin-top: 3em;
+	font-size: 14px;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);		
+}
+.ajouter:active {
+	transform: scale(1);
+	opacity: 0.8;
+}
