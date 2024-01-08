@@ -30,11 +30,15 @@ a {
 	justify-content: center;
 	margin: 7px;
 	padding: 3px 13px;
-	&:active {
+	&.active {
 		background-color: #1D6154;
 		color: #FFFEF8;
 	}
 }
+
+.hidden {
+	display: none;
+  }
 
 /***Css pour Login***/
 
