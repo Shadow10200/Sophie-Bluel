@@ -1,4 +1,5 @@
 /*** Fetch pour les filtres ***/
+
 const filtres ='http://localhost:5678/api/categories';
 
 fetch(filtres)
@@ -9,15 +10,15 @@ fetch(filtres)
 
     // Analyser la réponse JSON
     return response.json();
-  })
+   })
   .then(data => {
     // Manipuler les données reçues de l'API
     console.log(data);
-  })
+   })
   .catch(error => {
     // Gérer les erreurs
     console.error('Erreur lors de la récupération des données:', error);
-  });
+   });
   
   /*** Variables + Data type lier a HTML ***/
 
