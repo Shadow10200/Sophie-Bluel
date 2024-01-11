@@ -13,11 +13,12 @@
 </head>
 <body>
 <header>
+	<!-- Personne , métier et lien ancre -->
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 			<li>
-				<a href="">projets</a>
+				<a href="index.html#projets">projets</a>
 			</li>
 			<li>
 				<a href="index.html#contact">contact</a>
@@ -33,8 +34,10 @@
 		</ul>
 	</nav>
 </header>
+<!-- Formulaire de connection -->
 <main>
 	<h2 class="centrer">Login</h2>
+	<form id="loginForm">
 	<div class="connection">	
 		<label class="label" type="email">E-mail:</label>
         <input class="input" type="email" id="email" pattern=".+@example\.com" size="30" required />
@@ -43,7 +46,7 @@
     </div>
 	<input type="submit" value="Se connecter" class="centrer se-connecter">
 	<div class="centrer motsdepasse">Mots de passe oublié</div>
-	
+	</form>
 </main>
 <footer>
 	<nav>
@@ -52,6 +55,7 @@
 		</ul>
 	</nav>
 </footer>
+<script src="assets/javascript/login.js"></script>
 </body>
 </html>
 
