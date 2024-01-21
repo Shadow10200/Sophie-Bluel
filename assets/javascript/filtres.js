@@ -31,7 +31,7 @@ var tous=document.querySelectorAll('[data-type="Objets"], [data-type="Appartemen
    /*** Fitres les images avec hidden ***/
    
 document.getElementById('tous').addEventListener('click', function() {
-    console.log('Élément "hotels et restaurants" cliqué :',this);
+    console.log('Élément "objets" "appartements" "hotelsRestaurants" cliqué :',this);
     document.querySelectorAll('.encadrements-filtres').forEach(function(div){
         console.log('tous',div)
         div.classList.remove('active')
@@ -46,7 +46,7 @@ document.getElementById('tous').addEventListener('click', function() {
 });
 
 document.getElementById('objets').addEventListener('click', function() {
-    console.log('Élément "hotels et restaurants" cliqué :',this);
+    console.log('Élément "objets" :',this);
     document.querySelectorAll('.encadrements-filtres').forEach(function(div){
     console.log('objets',div)
     div.classList.remove('active')
@@ -65,7 +65,7 @@ document.getElementById('objets').addEventListener('click', function() {
 
 
 document.getElementById('appartements').addEventListener('click', function() {
-    console.log('Élément "hotels et restaurants" cliqué :',this);
+    console.log('appartements" cliqué :',this);
     document.querySelectorAll('.encadrements-filtres').forEach(function(div){
     console.log('appartements',div)
     div.classList.remove('active')
@@ -84,7 +84,7 @@ document.getElementById('appartements').addEventListener('click', function() {
 
     
 document.getElementById('hotelsRestaurants').addEventListener('click', function() {
-    console.log('Élément "hotels et restaurants" cliqué :',this);
+    console.log('Élément "hotelsRestaurants :',this);
     document.querySelectorAll('.encadrements-filtres').forEach(function(div){
     console.log('hotelsRestaurants',div)
     div.classList.remove('active')
@@ -100,6 +100,8 @@ document.getElementById('hotelsRestaurants').addEventListener('click', function(
         }
     });
 });
+//creer un fonction qui va aller voir le local storage 
+//si imformation personne connecter afficher barre noir et modifier et faire disparaitre les filtres
 
  
     

@@ -16,7 +16,7 @@
 <body>
 <header>
 	<!-- Barre noir du mode édition visible après connection-->
-	<div class="barre-noir">
+	<div class="barre-noir ">
 		<i class="fa-regular fa-pen-to-square"></i>
 		<p>Mode édition</p>
 	</div>
@@ -53,6 +53,51 @@
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
 	</section>
+	<!-- Fenètre mini galerie photos + ajout photos -->
+    <section class="petite-fenètre" id="galerie-photo">
+		<div>
+			<div class="écart2">
+				<i class="fa-solid fa-xmark fermer"></i>
+			</div>
+		</div>
+		<h2 class="centrer police-Work">Galerie photo</h2>
+		<div>
+			<div class="centrer ligne-de-séparation">
+			   <input type="submit" value="Ajouter une photo" class="ajouter">
+			</div>
+		</div>
+	</section>
+	<section class="petite-fenètre" id="ajouter-photo">
+		<div class="écart">
+			<i class="fa-solid fa-arrow-left précédent"></i>
+			<i class="fa-solid fa-xmark fermer"></i>
+		</div>
+		<h2 class="centrer police-Work">Ajout photo</h2>
+		<!-- Cadre ajout photos -->
+		<div class="cadre-photo centrer">
+			<div>   
+				<div class="centrer">
+					<i class="fa-regular fa-image icone-photo"></i> 
+				</div>
+				<div class="ajouter-photo police-Work">
+					+ Ajouter photo
+				</div>
+				    <p class="mo-max centrer police-Work">jpg , pgn :4mo max</p>
+				</div>
+			</div>  
+		<!-- Formulaire ajout phtos -->
+		<div>
+			<form action="/votre-action-de-traitement" method="post" class="connection">
+				<label class="label police-Work"  for="categorie">Titre :</label>
+				<input class="input input2" type="text" id="titre" name="titre" required>
+				<label class="label police-Work" for="categorie">Catégorie :</label>
+				<input class="input input2" type="text" id="categorie" name="categorie" required>   
+			</form>
+			<div class="centrer ligne-de-séparation">
+				<input type="submit" value="Valider" class="valider">
+			</div>
+		</div>
+	</section>	
 	<section id="portfolio">
 		<!-- Icones et modifier apparait après connection -->
 		<h2 id="projets">Mes Projets

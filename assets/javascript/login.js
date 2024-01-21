@@ -2,12 +2,15 @@
 
 const login ='http://localhost:5678/api/users/login';
 
-
+// Fonction pour vérifier si l'adresse e-mail est valide
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 // Fonction pour gérer la soumission du formulaire
 function handleLogin() {
   const emailInput = document.getElementById('email');
   const passwordInput = document.getElementById('pass');
-  }
 
   // Obtenir les valeurs des champs
   const email = emailInput.value;
@@ -25,37 +28,50 @@ function handleLogin() {
     password: password,
   };
 
-  // Configuration de la requête
-  const requestOptions = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(connection),
-  };
-
-
-fetch(login)
+  fetch(login)
   .then(response => {
     if (!response.ok) {
       throw new Error(`Erreur HTTP! Statut: ${response.status}`);
     }
-    // Analyser la réponse JSON
     return response.json();
     })
   .then(data => {
-    // Manipuler les données reçues de l'API
     console.log(data);
-    })
+    //regarder le mail et mdp correspod a un donner de data
+    if (data.redirect) {
+      // Si oui, vérifier les conditions pour accorder l'accès
+      if (data.email === email && data.password === password) {
+        // Si le courriel et le mot de passe correspondent, rediriger vers la page principale
+        window.location.href = data.redirect;
+      } else {
+        console.error('Email ou mot de passe est incorrect.');
+    if (data.redirect) {
+      window.location.href = data.redirect;
+    } else {
+      console.error('La réponse ne contient pas d\'URL de redirection valide.');
+  
+    }
+  }}})
   .catch(error => {
-  // Gérer les erreurs
-  console.error('Erreur lors de la récupération des données:', error);
+    console.error('Erreur lors de la récupération des données:', error);
   });
+}
 
   // Ajouter un gestionnaire d'événements sur la soumission du formulaire
-  document.getElementById('loginForm').addEventListener('submit', function (event) {
-    event.preventDefault(); 
-    handleLogin(); 
-    });
+document.getElementById('loginForm').addEventListener('submit', function (event) {
+  event.preventDefault(); 
+  handleLogin(); 
+});
 
+// Enregistrer des données dans sessionStorage
+sessionStorage.setItem();
+
+// Récupérer des données depuis sessionStorage
+var data = sessionStorage.getItem();
+
+// Supprimer des données de sessionStorage
+sessionStorage.removeItem();
+
+// Supprimer toutes les données de sessionStorage
+sessionStorage.clear();
 
