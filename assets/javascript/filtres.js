@@ -104,14 +104,14 @@ document.getElementById('hotelsRestaurants').addEventListener('click', function(
 //si imformation personne connecter afficher barre noir et modifier et faire disparaitre les filtres
 const  verifConnection= function () {
     if (localStorage.getItem('verification') === 'true') {
-        console.log('Je suis une personne connecté');
+      console.log('Je suis une personne connecté');
     }
     {
-        console.log('Je ne suis pas une personne connecté');
+      console.log('Je ne suis pas une personne connecté');
     }
-  };
-  vérifConnection();
-  
+    };
+    verifConnection();
+
  
     
 
