@@ -105,12 +105,13 @@ document.getElementById('hotelsRestaurants').addEventListener('click', function(
 const  verifConnection= function () {
     if (localStorage.getItem('verification') === 'true') {
       console.log('Je suis une personne connecté');
+    } 
+    else if (localStorage.getItem('verification') !== 'fault') {
+            console.log('Je ne suis pas une personne connectée');
+        
     }
-    {
-      console.log('Je ne suis pas une personne connecté');
-    }
-    };
-    verifConnection();
+};
+verifConnection();
 
  
     
