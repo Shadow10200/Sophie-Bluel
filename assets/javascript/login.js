@@ -41,15 +41,16 @@ function handleLogin() {
     if (data.redirect) {
       // Si oui, vérifier les conditions pour accorder l'accès
       if (data.email === email && data.password === password) {
-        // Si le courriel et le mot de passe correspondent, rediriger vers la page principale
+      // Si le courriel et le mot de passe correspondent, rediriger vers la page principale
         window.location.href = data.redirect;
       } else {
         console.error('Email ou mot de passe est incorrect.');
     if (data.redirect) {
+      localStorage.setItem('verification', 'true');
       window.location.href = data.redirect;
     } else {
       console.error('La réponse ne contient pas d\'URL de redirection valide.');
-  
+      localStorage.setItem('verification', 'false');
     }
   }}})
   .catch(error => {
@@ -62,16 +63,4 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
   event.preventDefault(); 
   handleLogin(); 
 });
-
-// Enregistrer des données dans sessionStorage
-sessionStorage.setItem();
-
-// Récupérer des données depuis sessionStorage
-var data = sessionStorage.getItem();
-
-// Supprimer des données de sessionStorage
-sessionStorage.removeItem();
-
-// Supprimer toutes les données de sessionStorage
-sessionStorage.clear();
 
