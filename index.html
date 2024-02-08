@@ -16,7 +16,7 @@
 <body>
 <header>
 	<!-- Barre noir du mode édition visible après connection-->
-	<div class="barre-noir ">
+	<div class="barre-noir "  id="visible">
 		<i class="fa-regular fa-pen-to-square"></i>
 		<p>Mode édition</p>
 	</div>
@@ -102,11 +102,11 @@
 		<!-- Icones et modifier apparait après connection -->
 		<h2 id="projets">Mes Projets
 			<a>
-				<i class="fa-regular fa-pen-to-square"></i>modifier
+				<i id="visible" class="fa-regular fa-pen-to-square"></i>modifier
 			</a>	
 		</h2>
 		<!-- Filtres de la gallery photo disparait après connection -->
-		<h3 class="filtres">
+		<h3 class="filtres" id="cacher">
 			<div class="encadrements-filtres" id="tous">Tous</div>	
 			<div class="encadrements-filtres" id="objets">Objets</div>		
 			<div class="encadrements-filtres" id="appartements">Appartements</div>

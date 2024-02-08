@@ -106,9 +106,11 @@ const  verifConnection= function () {
     if (localStorage.getItem('verification') === 'true') {
       console.log('Je suis une personne connecté');
     } 
-    else console.log('Je ne suis pas une personne connectée');
+    else{ console.log('Je ne suis pas une personne connectée');
     verifConnection();    
     }
+}
+
 
 
  
