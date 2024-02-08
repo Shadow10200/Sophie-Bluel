@@ -43,7 +43,14 @@ function isValidEmail(email) {
     if (response.ok) {
       sessionStorage.setItem("token", data.token);
       window.location.href = "index.html";
-     
+      console.log("page principale");
+
+      const visible = document.getElementById('visible');
+      visible.style.display = 'block';
+
+      const cacher = document.getElementById('cacher');
+      cacher.style.display = 'none';
+      
     } else {
       errorMessage.textContent = "Email ou Password incorrect";
       console.log("erreur de saisie")
@@ -55,12 +62,6 @@ function isValidEmail(email) {
     console.log("erreur")
     }
     });
-
-      const visible = document.getElementById('visible');
-      visible.style.display = 'block';
-
-      const cacher = document.getElementById('cacher');
-      cacher.style.display = 'none';
-      console.log("page principale");
+  
 
     
