@@ -102,16 +102,27 @@ document.getElementById('hotelsRestaurants').addEventListener('click', function(
 });
 //creer un fonction qui va aller voir le local storage 
 //si imformation personne connecter afficher barre noir et modifier et faire disparaitre les filtres
-const  verifConnection= function () {
-    if (localStorage.getItem('verification') === 'true') {
-      console.log('Je suis une personne connecté');
-    } 
-    else{ console.log('Je ne suis pas une personne connectée');
-    verifConnection();    
+const  verifConnection = function () {
+    if (sessionStorage.getItem('token') !== '') {
+      const visible = document.querySelectorAll('.visible');
+      visible.forEach((item)=>{
+        item.style.display = 'inline-flex';
+      })
+      
+      const cacher = document.getElementById('cacher');
+      cacher.style.display = 'none';
+      console.log('test');
+    
     }
-}
+};
+verifConnection()
+console.log('test1')
 
-
+const modifier = document.getElementById('modifier');
+const cadrePhoto = document.querySelector('.cadre-photo');
+modifier.addEventListener("click", function() {
+    cadrePhoto.style.display = "flex";
+});
 
  
     
