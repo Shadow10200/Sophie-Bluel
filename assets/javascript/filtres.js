@@ -100,29 +100,97 @@ document.getElementById('hotelsRestaurants').addEventListener('click', function(
         }
     });
 });
+//***Au moment de la connection***//
 //creer un fonction qui va aller voir le local storage 
 //si imformation personne connecter afficher barre noir et modifier et faire disparaitre les filtres
 const  verifConnection = function () {
-    if (sessionStorage.getItem('token') !== '') {
+  console.log(sessionStorage.getItem('token'))
+  if (sessionStorage.getItem('token') !== null && sessionStorage.getItem('token') !== '') {
       const visible = document.querySelectorAll('.visible');
       visible.forEach((item)=>{
         item.style.display = 'inline-flex';
-      })
-      
-      const cacher = document.getElementById('cacher');
-      cacher.style.display = 'none';
-      console.log('test');
-    
-    }
+      })    
+      const cacher = document.querySelectorAll('.cacher');
+      cacher.forEach((item)=>{
+        item.style.display = 'none';
+        console.log('test')
+      })  
+  }
 };
 verifConnection()
 console.log('test1')
 
+//***Petite fenètre***//
+//***Galerie photo
+//Ouverture de la petite fenètre galerie-photo au clic sur modifier
 const modifier = document.getElementById('modifier');
-const cadrePhoto = document.querySelector('.cadre-photo');
-modifier.addEventListener("click", function() {
-    cadrePhoto.style.display = "flex";
+const galeriePhoto = document.querySelector('#galerie-photo');
+
+modifier.addEventListener('click', function() {
+  galeriePhoto.style.display='block';
+  console.log('test')
 });
+
+//Ajout miniature images dans galerie photo via APi(ne fonctionne pas pour l'instant)
+const APIminiature ='http://localhost:5678/api/works';
+const miniature = document.getElementById('miniature');
+
+fetch(APIminiature)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP! Statut: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    miniature.src = data.url; 
+    miniature.alt = data.description;
+    console.log(data);
+  })
+  .catch(error => {
+  console.error('Erreur lors de la récupération des données:', error);
+  });
+
+//Ouveture de la petite fenetre ajouter photo au clic sur bouton ajouter  
+const ajouter =document.querySelector('.ajouter')
+ajouter.addEventListener('click', function() {
+  galeriePhoto.style.display ='none';
+  ajouterPhoto.style.display='block'
+  console.log('test3')
+});
+
+//***Galerie photo et Ajouter photo  
+//Fermeture de petite fenètre sur la croix 
+const croix = document.getElementById('croix');
+const ajouterPhoto = document.querySelector('#ajouter-photo');
+
+croix.addEventListener('click', function() {
+  galeriePhoto.style.display ='none';
+  ajouterPhoto.style.display='none';//ne fonctionne pas,pourquoi?
+  console.log('test4')
+});
+
+//***Ajouter photo
+//Retour sur galerie photo au clic sur la flèche
+
+const fleche =document.getElementById('fleche')
+fleche.addEventListener('click', function() {
+  galeriePhoto.style.display ='block';
+  ajouterPhoto.style.display='none';
+  console.log('test5')
+});
+
+
+
+
+
+
+
+
+
+
+
+  
 
  
     

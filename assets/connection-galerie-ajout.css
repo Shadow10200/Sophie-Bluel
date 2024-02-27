@@ -191,7 +191,7 @@ nav{
 
 }
 
-.petite-fenètre {
+.petite-fenetre {
 	display: none;
 	width: 630px;
 	height: 670px;
@@ -241,4 +241,7 @@ nav{
 .ajouter:active {
 	transform: scale(1);
 	opacity: 0.8;
+}
+.deconnection {
+	display: none;
 }
