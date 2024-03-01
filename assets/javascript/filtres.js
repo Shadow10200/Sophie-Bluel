@@ -120,6 +120,21 @@ const  verifConnection = function () {
 verifConnection()
 console.log('test1')
 
+//Bouton déconnection
+const deconnexion = document.getElementById('deconnection');
+deconnection.addEventListener('click', function() {
+  if (sessionStorage.removeItem('token') !== null && sessionStorage.removeItem('token') !== '') {
+    const visible = document.querySelectorAll('.visible');
+    visible.forEach(item => {
+        item.style.display = 'none';
+    });
+    const cacher = document.querySelectorAll('.cacher');
+    cacher.forEach(item => {
+        item.style.display = 'flex';
+    });
+  }  
+});
+
 //***Petite fenètre***//
 //***Galerie photo
 //Ouverture de la petite fenètre galerie-photo au clic sur modifier
