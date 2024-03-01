@@ -161,14 +161,18 @@ ajouter.addEventListener('click', function() {
 
 //***Galerie photo et Ajouter photo  
 //Fermeture de petite fenètre sur la croix 
-const croix = document.getElementById('croix');
 const ajouterPhoto = document.querySelector('#ajouter-photo');
+const croix1 = document.getElementById('croix1');
+const croix2 = document.getElementById('croix2');
+croix1.addEventListener('click', fermerFenetre);
+croix2.addEventListener('click', fermerFenetre);
 
-croix.addEventListener('click', function() {
+
+function fermerFenetre() {
   galeriePhoto.style.display ='none';
-  ajouterPhoto.style.display='none';//ne fonctionne pas,pourquoi?
+  ajouterPhoto.style.display='none';
   console.log('test4')
-});
+};
 
 //***Ajouter photo
 //Retour sur galerie photo au clic sur la flèche
@@ -179,6 +183,12 @@ fleche.addEventListener('click', function() {
   ajouterPhoto.style.display='none';
   console.log('test5')
 });
+
+//API pour ajouter photo 
+const formulaire = 'http://localhost:5678/api/works'
+const formulairePhoto = getElementById('formulaire')
+
+
 
 
 
