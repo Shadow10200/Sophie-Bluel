@@ -20,7 +20,7 @@ fetch(filtres)
     console.error('Erreur lors de la récupération des données:', error);
    });
   
-  /*** Variables + Data type lier a HTML ***/
+/*** Variables + Data type lier a HTML ***/
 
 var objets=document.querySelectorAll('[data-type="Objets"]');
 var appartements=document.querySelectorAll('[data-type="Appartements"]');
@@ -150,8 +150,16 @@ modifier.addEventListener('click', function() {
 const APIminiature ='http://localhost:5678/api/works';
 const miniature = document.getElementById('miniature');
 
-fetch(APIminiature)
+fetch(APIminiature,{ 
+  method: "GET",
+  headers: {
+    'Authorization': ' Bearer ' + (sessionStorage.getItem('token')),
+    "Content-Type": "application/json",
+  },
+  
+})
   .then(response => {
+    //console.log(response)
     if (!response.ok) {
       throw new Error(`Erreur HTTP! Statut: ${response.status}`);
     }
@@ -160,7 +168,16 @@ fetch(APIminiature)
   .then(data => {
     miniature.src = data.url; 
     miniature.alt = data.description;
+    console.log('test5')
     console.log(data);
+    data.forEach(item => { 
+    let div = document.createElement('div');
+    let img = document.createElement('img')
+    img.src = item.imageUrl 
+    //div.textContent = item.title 
+    div.append (img)
+    miniature.append(div)
+    })
   })
   .catch(error => {
   console.error('Erreur lors de la récupération des données:', error);
@@ -199,13 +216,26 @@ fleche.addEventListener('click', function() {
   console.log('test5')
 });
 
-//API pour ajouter photo 
+//API pour ajouter photo (ne fnctionne pas pour l'instant)
 const formulaire = 'http://localhost:5678/api/works'
 const formulairePhoto = getElementById('formulaire')
 
+fetch(formulaire)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP! Statut: ${response.status}`);
+    }
 
+    return response.json();
+   })
+  .then(data => {
+    console.log(data);
 
-
+   })
+  .catch(error => {
+    console.error('Erreur lors de la récupération des données:', error);
+   });
+  
 
 
 
