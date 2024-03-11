@@ -175,8 +175,12 @@ fetch(APIminiature,{
     let img = document.createElement('img')
     img.src = item.imageUrl 
     //div.textContent = item.title 
-    div.append (img)
-    miniature.append(div)
+    div.append (img);
+    let i = document.createElement('i');
+    i.classList.add('fa-solid','fa-trash');
+    div.append(i);
+    div.classList.add('miniatureSupp')
+    miniature.append(div);
     })
   })
   .catch(error => {
@@ -205,6 +209,7 @@ function fermerFenetre() {
   ajouterPhoto.style.display='none';
   console.log('test4')
 };
+
 
 //***Ajouter photo
 //Retour sur galerie photo au clic sur la flèche
@@ -236,7 +241,10 @@ fetch(formulaire)
     console.error('Erreur lors de la récupération des données:', error);
    });
   
+   function ajout() {
+    document.getElementById("images").click();
 
+  }
 
 
 

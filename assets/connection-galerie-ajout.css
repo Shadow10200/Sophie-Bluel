@@ -183,6 +183,8 @@ nav{
 	margin-top: 10px;
     font-size: 14px;
 	color: #306685;
+	border: none;
+	margin-bottom: 10px;
 }
 
 .mo-max {
@@ -262,4 +264,19 @@ nav{
 }
 #miniature div img{
    width: 100%;
+}
+
+.miniatureSupp {
+	position: relative;
+}
+
+.miniatureSupp i {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: white;
+}
+
+.inputPhoto {
+	display: none;
 }
